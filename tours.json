@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Exotic Sumba",
+    "destination": "Pulau Sumba",
+    "current_tourists": 0,
+    "max_tourists": 20,
+    "latitude" : -9.676352314680946,
+    "longitude" : 119.98039959556064
+  },
+  {
+    "name": "Pesona Danau Toba",
+    "destination": "Sumatera Utara",
+    "current_tourists": 0,
+    "max_tourists": 20,
+    "latitude" : 2.8210641756091013,
+    "longitude" : 98.61578854584616
+  },
+  {
+    "name": "Likupang Tour",
+    "destination": "Sulawesi Utara",
+    "current_tourists": 0,
+    "max_tourists": 20,
+    "latitude" : 1.673581590795721,
+    "longitude" : 125.05470319178679
+  },
+  {
+    "name": "Lembah Baliyem - Wamena",
+    "destination": "Papua",
+    "current_tourists": 0,
+    "max_tourists": 20,
+    "latitude" : -4.0963518795925555,
+    "longitude" : 138.94599182740487
+  }
+]
