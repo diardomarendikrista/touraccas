@@ -13,16 +13,21 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Tourist.belongsToMany(models.Tour, { through: models.TourTourist, foreignKey: 'tourist_id'  });
     }
+
+    getFullName() {
+      return `${this.first_name} ${this.last_name}`;
+    }
   };
   Tourist.init({
-    name: {
+    first_name: {
       type: DataTypes.STRING,
       validate: {
         notEmpty: {
-          msg: 'nama tidak boleh kosong'
+          msg: 'nama depan tidak boleh kosong'
         }
       }
     },
+    last_name: DataTypes.STRING,
     age: {
       type: DataTypes.INTEGER,
       validate: {
@@ -42,6 +47,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Tourist',
+    hooks: {
+      beforeCreate(instance, options) {
+        !instance.last_name ? instance.last_name = instance.first_name : '';
+      }
+    }
   });
   return Tourist;
 };
