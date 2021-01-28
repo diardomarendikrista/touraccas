@@ -2,6 +2,9 @@
 <h2>Add Tour</h2>
 
 <form action="/tours/add" method="POST">
+  <% if (errValidate) {%>
+    <p class="errMessage"><%= errValidate %></p>
+  <% } %>
   <label for="name">Name</label><br>
   <input type="text" name="name"><br>
   <label for="destination">Destination</label><br>

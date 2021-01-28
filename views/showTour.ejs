@@ -18,7 +18,7 @@
         <td><%= index+1 %></td>
         <td><%= element.name %></td>
         <td><%= element.destination %></td>
-        <td><%= element.Tourists.length %></td>
+        <td><%= formatPeople(element.Tourists.length) %></td>
         <td>
           <a href="/tours/<%= element.id %>/edit">Edit</a> |
           <a href="/tours/<%= element.id %>/delete" onclick="return confirm('Are you sure to delete?')">Delete</a> |

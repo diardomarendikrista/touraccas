@@ -4,6 +4,9 @@
 <h3><%= dataTour.destination %></h3>
 
 <form action="/tours/<%= dataTour.id %>/addTourist" method="POST">
+  <% if (errValidate) {%>
+    <p class="errMessage"><%= errValidate %></p>
+  <% } %>
   <label for="tourist_id">Tourist</label>
   <select name="tourist_id">
     <option value="">--- SELECT ---</option>

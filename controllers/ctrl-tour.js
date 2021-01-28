@@ -14,7 +14,8 @@ class CtrlTour {
   }
 
   static addForm(req, res) {
-    res.render("addTour", { title: "Tour Accas - Add" });
+    const errValidate = req.query.errValidate;
+    res.render("addTour", { title: "Tour Accas - Add", errValidate });
   }
 
   static add(req, res) {
@@ -28,14 +29,24 @@ class CtrlTour {
       .then(data => {
         res.redirect("/tours");
       })
-      .catch(err => res.send(err));
+      .catch(err => {
+        if (err.errors.length <= 0) res.send(err);
+        else {
+          let errMessage = [];
+          err.errors.forEach(element => {
+            errMessage.push(element.message)
+          });
+          res.redirect(`/tours/add?errValidate=${errMessage}`);
+        }
+      });
   }
 
   static editForm(req, res) {
+    const errValidate = req.query.errValidate;
     const { id } = req.params;
     Tour.findOne({ where: { id } })
       .then(data => {
-        res.render("editTour", { title: "Tour Accas - Edit Tour", data })
+        res.render("editTour", { title: "Tour Accas - Edit Tour", data, errValidate })
       })
       .catch(err => res.send(err));
   }
@@ -55,7 +66,16 @@ class CtrlTour {
       .then(data => {
         res.redirect("/tours")
       })
-      .catch(err => res.send(err));
+      .catch(err => {
+        if (err.errors.length <= 0) res.send(err);
+        else {
+          let errMessage = [];
+          err.errors.forEach(element => {
+            errMessage.push(element.message)
+          });
+          res.redirect(`/tours/${id}/edit?errValidate=${errMessage}`);
+        }
+      });
   }
 
   static delete(req, res) {
@@ -69,6 +89,7 @@ class CtrlTour {
   }
 
   static addTouristForm(req, res) {
+    const errValidate = req.query.errValidate;
     const { id } = req.params;
     let dataTour;
 
@@ -79,7 +100,7 @@ class CtrlTour {
       })
       .then(dataTourist => {
         //res.send(dataTour);
-        res.render("addTourTourist", { title: "Tour Accas - add tour tourist", dataTour, dataTourist })
+        res.render("addTourTourist", { title: "Tour Accas - add tour tourist", dataTour, dataTourist, errValidate })
       })
       .catch(err => res.send(err));
   }
@@ -95,7 +116,16 @@ class CtrlTour {
       .then(data => {
         res.redirect(`/tours/${id}/addTourist`)
       })
-      .catch(err => res.send(err));
+      .catch(err => {
+        if (err.errors.length <= 0) res.send(err);
+        else {
+          let errMessage = [];
+          err.errors.forEach(element => {
+            errMessage.push(element.message)
+          });
+          res.redirect(`/tours/${id}/addTourist?errValidate=${errMessage}`);
+        }
+      });
   }
 
   static deleteTourist(req, res) {

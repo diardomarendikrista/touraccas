@@ -1,0 +1,38 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "age": 30,
+    "phone": "+6212345678"
+  },
+  {
+    "first_name": "Shinta",
+    "last_name": "Jojo",
+    "age": 20,
+    "phone": "+6212345678"
+  },
+  {
+    "first_name": "Para",
+    "last_name": "Mita",
+    "age": 20,
+    "phone": "+6212345678"
+  },
+  {
+    "first_name": "Ringgo",
+    "last_name": "Abdulrahman",
+    "age": 15,
+    "phone": "+6212345678"
+  },
+  {
+    "first_name": "Bambang",
+    "last_name": "Sudrajat",
+    "age": 50,
+    "phone": "+6212345678"
+  },
+  {
+    "first_name": "Surti",
+    "last_name": "Sunarsih",
+    "age": 47,
+    "phone": "+6212345678"
+  }
+]
