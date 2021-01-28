@@ -3,7 +3,7 @@ const { compare } = require('../helpers/bcrypt');
 
 class Controller {
   static home(req, res) {
-    res.render("about", { title: "Tour Accas - Home"})
+    res.render("home", { title: "Tour Accas - Home"})
   }
 
   static registerForm(req, res) {
