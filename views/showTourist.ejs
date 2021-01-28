@@ -1,6 +1,7 @@
-<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+<%- include('./partials/general') %>
 
-<h2>Tourist List</h2>
+<h6 class="montserrat">Tourist List</h6>
 <p><a href="/tourists/add">add tourist</a></p>
 <table border="1">
   <thead>
@@ -27,5 +28,10 @@
     <% }); %>
   </tbody>
 </table>
+
+<footer>
+  <%- include('./partials/regularfoots') %>
+</footer>
+
 
 <%- include('./partials/footer') %>

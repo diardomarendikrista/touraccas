@@ -1,15 +1,20 @@
-<%- include('./partials/header') %>
-  <h2>Login</h2>
+<%- include('./partials/navbar') %>
+<%- include('./partials/home') %>
 
+  <br><br>
+  <h6 class="montserrat">Login</h6>
+  <br>
   <form action="/login" method="POST">
     <% if (errValidate) {%>
       <p class="errMessage"><%= errValidate %></p>
     <% } %>
-    <label for="user">User</label><br>
-    <input type="text" name="user"><br>
-    <label for="password">Password</label><br>
-    <input type="password" name="password"><br><br>
-    <button type="submit">login</button>
+    <label class="ralewayd" for="user"><b>User</b></label><br>
+    <input class="ralewayd" width="70px" type="text" name="user"><br><br>
+    <label class="ralewayd" for="password"><b>Password</b></label><br>
+    <input class="ralewayd" width="70px" type="password" name="password"><br><br>
+    <button class="ralewayd" type="submit"><b>login</b></button>
   </form>
+  <br>
+  <p class="ralewayd"><a href="/register">Belum memiliki account?</p>
 
 <%- include('./partials/footer') %>

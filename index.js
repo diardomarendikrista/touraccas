@@ -9,7 +9,7 @@ app.locals.formatPeople = formatPeople;
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
-app.use("/css", express.static("public"));
+app.use(express.static('public'))
 
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({

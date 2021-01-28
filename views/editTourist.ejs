@@ -1,5 +1,7 @@
-<%- include('./partials/header') %>
-<h2>Edit Tourist</h2>
+<%- include('./partials/navbar') %>
+<%- include('./partials/general') %>
+
+<h6 class="montserrat">Edit Tourist</h6>
 
 <form action="/tourists/<%= data.id %>/edit" method="POST">
   <% if (errValidate) {%>
@@ -12,7 +14,7 @@
   <label for="age">Age</label><br>
   <input type="number" name="age" value="<%= data.age %>"><br>
   <label for="phone">Phone</label><br>
-  <input type="text" name="phone" value="<%= data.phone %>"><br>
+  <input type="text" name="phone" value="<%= data.phone %>"><br><br>
   <button type="submit">Edit Tourist</button>
   <button type="button" onclick="javascript:window.history.back();">cancel</button>
 </form>

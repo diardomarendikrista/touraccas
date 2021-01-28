@@ -18,8 +18,11 @@ router.get("/register", Controller.registerForm);
 router.post("/register", Controller.register);
 router.get("/logout", Controller.logout);
 
+
 router.use(mid);
 router.use("/tours", tour);
 router.use("/tourists", tourist);
+
+router.use("/logout", Controller.logout)
 
 module.exports = router;

@@ -1,23 +1,23 @@
-<%- include('./partials/header') %>
+<%- include('./partials/navbar') %>
+<%- include('./partials/general') %>
 
-<h2><%= dataTour.name %></h2>
-<h3><%= dataTour.destination %></h3>
+<h6 class="montserrat"> <%= dataTour.name  %></h6>
+<h6 class="bitmontserrat">📍<%= dataTour.destination %> </h6><br>
 
 <form action="/tours/<%= dataTour.id %>/addTourist" method="POST">
   <% if (errValidate) {%>
     <p class="errMessage"><%= errValidate %></p>
   <% } %>
+
   <label for="tourist_id">Tourist</label>
   <select name="tourist_id">
     <option value="">--- SELECT ---</option>
     <% dataTourist.forEach(element => { %>
       <option value="<%= element.id %>"><%= element.getFullName() %></option>
     <% }); %>
-  </select><br><br>
+  </select>
   <button type="submit">add tourist to tour</button>
-</form>
-
-<br><br><br>
+</form><br>
 
 <table border="1">
   <thead>

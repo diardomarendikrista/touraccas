@@ -1,21 +1,28 @@
-<%- include('./partials/header') %>
-<h2>Add Tour</h2>
+<%- include('./partials/navbar') %>
+<%- include('./partials/general') %>
+
+<h6 class="montserrat">Add Tour</h6>
 
 <form action="/tours/add" method="POST">
+
   <% if (errValidate) {%>
     <p class="errMessage"><%= errValidate %></p>
   <% } %>
+
   <label for="name">Name</label><br>
   <input type="text" name="name"><br>
+
   <label for="destination">Destination</label><br>
-  <input type="text" name="destination"><br>
-
-  <div id="googleMap" style="width:30%;height:380px;"></div>
-
-  <label for="latitude">Latitude</label><br>
-  <input type="number" id="lat" step="any" name="latitude"><br>
-  <label for="longitude">Longitude</label><br>
+  <input type="text" name="destination"><br
+  >
+  <label for="latitude">Coordinate</label><br>
+  <label for="latitude">Lat.</label>
+  <input type="number" id="lat" step="any" name="latitude">
+  <label for="longitude">Lon.</label>
   <input type="number" id="lng" step="any" name="longitude"><br><br>
+
+  <div id="googleMap" style="width:100%;height:380px;"></div><br>
+
   <button type="submit">add Tour</button>
   <button type="button" onclick="javascript:window.history.back();">cancel</button>
 </form>
