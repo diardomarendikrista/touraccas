@@ -1,0 +1,22 @@
+.typo {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#typograph {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.kotak{
+	padding: 50px;
+	width: 100px;
+	color: #fff;
+	margin: 10px;
+	background: orange;	
+}
+ 
+#kotak{
+	width: 400px;
+	color: #fff;
+	background: blue;
+	padding: 50px;
+}

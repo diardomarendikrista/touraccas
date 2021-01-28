@@ -3,7 +3,7 @@ const { compare } = require('../helpers/bcrypt');
 
 class Controller {
   static home(req, res) {
-    res.render("home", { title: "Tour Accas - Home"})
+    res.render("about", { title: "Tour Accas - Home"})
   }
 
   static registerForm(req, res) {
@@ -55,7 +55,6 @@ class Controller {
       })
       .catch(err => res.send(err))
   }
-
   static logout(req, res) {
     req.session.destroy(err => {
       res.redirect("/login");

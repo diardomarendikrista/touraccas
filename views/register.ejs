@@ -1,17 +1,20 @@
-<%- include('./partials/header') %>
-  <h2>Register</h2>
+<%- include('./partials/navbar') %>
+<%- include('./partials/home') %>
 
+  <br><br>
+  <h6 class="montserrat">Register</h6>
+  <br>
   <form action="/register" method="POST">
     <% if (errValidate) {%>
       <p class="errMessage"><%= errValidate %></p>
     <% } %>
-    <label for="user">User</label><br>
+    <label class="ralewayd" for="user">User</label><br>
     <input type="text" name="user"><br>
-    <label for="email">Email</label><br>
+    <label class="ralewayd" for="email">Email</label><br>
     <input type="text" name="email"><br>
-    <label for="password">Password</label><br>
+    <label class="ralewayd" for="password">Password</label><br>
     <input type="password" name="password"><br><br>
-    <button type="submit">register</button>
+    <button class="ralewayd" type="submit">register</button>
   </form>
 
 <%- include('./partials/footer') %>
