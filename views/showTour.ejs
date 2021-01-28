@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+
+<h2>Tour List</h2>
+<p><a href="/tours/add">add tour</a></p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Destination</th>
+      <th>Tourist</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach((element, index) => { %>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= element.name %></td>
+        <td><%= element.destination %></td>
+        <td><%= element.Tourists.length %></td>
+        <td>
+          <a href="/tours/<%= element.id %>/edit">Edit</a> |
+          <a href="/tours/<%= element.id %>/delete" onclick="return confirm('Are you sure to delete?')">Delete</a> |
+          <a href="/tours/<%= element.id %>/addTourist">Add Tourist</a>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('./partials/footer') %>

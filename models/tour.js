@@ -31,8 +31,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    current_tourists: DataTypes.INTEGER,
-    max_tourists: DataTypes.INTEGER,
     latitude: DataTypes.FLOAT,
     longitude: DataTypes.FLOAT
   }, {

@@ -1,0 +1,55 @@
+
+<script>
+  let marker;
+  let latAwal = Number(document.getElementById("lat").value);
+  let lngAwal = Number(document.getElementById("lng").value);
+
+
+  !latAwal ? latAwal = -6.24049372134219 : '';
+  !lngAwal ? lngAwal = 106.83897100576151 : '';
+
+
+  function taruhMarker(peta, posisiTitik) {
+    if (marker) {
+      // pindahkan marker
+      marker.setPosition(posisiTitik);
+    } else {
+      // buat marker baru
+      marker = new google.maps.Marker({
+        position: posisiTitik,
+        map: peta
+      });
+    }
+
+    // isi nilai koordinat ke form
+    document.getElementById("lat").value = posisiTitik.lat();
+    document.getElementById("lng").value = posisiTitik.lng();
+  }
+
+  function initialize() {
+    var propertiPeta = {
+      center: new google.maps.LatLng(latAwal, lngAwal),
+      zoom: 9,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var peta = new google.maps.Map(document.getElementById("googleMap"), propertiPeta);
+
+    // even listner ketika peta diklik
+    google.maps.event.addListener(peta, 'click', function (event) {
+      taruhMarker(this, event.latLng);
+    });
+
+    marker = new google.maps.Marker({
+        position: {lat: latAwal, lng: lngAwal},
+        map: peta
+    });
+  }
+
+  // event jendela di-load  
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+
+</body>
+</html>

@@ -14,12 +14,6 @@ module.exports = {
       destination: {
         type: Sequelize.STRING
       },
-      current_tourists: {
-        type: Sequelize.INTEGER
-      },
-      max_tourists: {
-        type: Sequelize.INTEGER
-      },
       latitude: {
         type: Sequelize.FLOAT
       },

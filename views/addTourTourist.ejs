@@ -1,0 +1,41 @@
+<%- include('./partials/header') %>
+
+<h2><%= dataTour.name %></h2>
+<h3><%= dataTour.destination %></h3>
+
+<form action="/tours/<%= dataTour.id %>/addTourist" method="POST">
+  <label for="tourist_id">Tourist</label>
+  <select name="tourist_id">
+    <option value="">--- SELECT ---</option>
+    <% dataTourist.forEach(element => { %>
+      <option value="<%= element.id %>"><%= element.getFullName() %></option>
+    <% }); %>
+  </select><br><br>
+  <button type="submit">add tourist to tour</button>
+</form>
+
+<br><br><br>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>no</th>
+      <th>name</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% dataTour.Tourists.forEach((element, index)=> { %>
+      <tr>
+        <td><%= index+1 %></td>
+        <td><%= element.getFullName() %></td>
+        <td>
+           <a href="/tours/<%= dataTour.id %>/addTourist/<%= element.id %>/delete" class="btnMenu" onclick="return confirm('Are you sure to delete?')">Delete</a>
+        </td>
+      </tr>
+      <% }); %>
+  </tbody>
+</table>
+
+
+<%- include('./partials/footer') %>

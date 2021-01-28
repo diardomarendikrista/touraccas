@@ -1,0 +1,20 @@
+<%- include('./partials/header') %>
+<h2>Edit Tour</h2>
+
+<form action="/tours/<%= data.id %>/edit" method="POST">
+  <label for="name">Name</label><br>
+  <input type="text" name="name" value="<%= data.name %>"><br>
+  <label for="destination">Destination</label><br>
+  <input type="text" name="destination" value="<%= data.destination %>"><br>
+
+  <div id="googleMap" style="width:30%;height:380px;"></div>
+
+  <label for="latitude">Latitude</label><br>
+  <input type="number" id="lat" step="any" name="latitude" value="<%= data.latitude %>"><br>
+  <label for="longitude">Longitude</label><br>
+  <input type="number" id="lng" step="any" name="longitude" value="<%= data.longitude %>"><br><br>
+  <button type="submit">Edit Tour</button>
+  <button type="button" onclick="javascript:window.history.back();">cancel</button>
+</form>
+
+<%- include('./partials/footer') %>
