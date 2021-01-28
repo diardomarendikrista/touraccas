@@ -2,6 +2,9 @@
 <h2>Edit Tourist</h2>
 
 <form action="/tourists/<%= data.id %>/edit" method="POST">
+  <% if (errValidate) {%>
+    <p class="errMessage"><%= errValidate %></p>
+  <% } %>
   <label for="first_name">First Name</label><br>
   <input type="text" name="first_name" value="<%= data.first_name %>"><br>
   <label for="last_name">Last Name</label><br>
