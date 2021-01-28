@@ -15,7 +15,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   TourTourist.init({
     tour_id: DataTypes.INTEGER,
-    tourist_id: DataTypes.INTEGER
+    tourist_id: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: {
+          msg: 'nama turis tidak boleh kosong'
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'TourTourist',

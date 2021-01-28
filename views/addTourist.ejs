@@ -1,0 +1,17 @@
+<%- include('./partials/header') %>
+<h2>Add Tourist</h2>
+
+<form action="/tourists/add" method="POST">
+  <label for="first_name">First Name</label><br>
+  <input type="text" name="first_name"><br>
+  <label for="last_name">Last Name</label><br>
+  <input type="text" name="last_name"><br>
+  <label for="age">Age</label><br>
+  <input type="number" name="age"><br>
+  <label for="phone">Phone</label><br>
+  <input type="text" name="phone"><br>
+  <button type="submit">add Tourist</button>
+  <button type="button" onclick="javascript:window.history.back();">cancel</button>
+</form>
+
+<%- include('./partials/footer') %>
