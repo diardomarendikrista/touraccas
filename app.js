@@ -2,7 +2,8 @@ const session = require('express-session');
 const express = require("express");
 const router = require("./routes/index");
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 5001;
+// const port = 3000;
 
 const formatPeople = require('./helpers/formatPeople');
 app.locals.formatPeople = formatPeople;
@@ -21,6 +22,4 @@ app.use(session({
 
 app.use("/", router)
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
-})
+app.listen(PORT, () => console.log(`Server is listening on port ${PORT}...`));
