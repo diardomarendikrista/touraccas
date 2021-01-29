@@ -28,6 +28,7 @@ class Controller {
           err.errors.forEach(element => {
             errMessage.push(element.message)
           });
+          errMessage[0] === "user must be unique" ? errMessage[0] = "user sudah dipakai" : '';
           res.redirect(`/register?errValidate=${errMessage}`);
         }
       });
