@@ -1,8 +1,8 @@
 <%- include('./partials/header') %>
 
 <h2>Tourist List</h2>
-<p><a href="/tourists/add">add tourist</a></p>
-<table border="1">
+<p><a href="/tourists/add" class="btnMenu">add tourist</a></p>
+<table class="zui-table">
   <thead>
     <tr>
       <th>No</th>
@@ -20,8 +20,8 @@
         <td><%= element.age %></td>
         <td><%= element.phone %></td>
         <td>
-          <a href="/tourists/<%= element.id %>/edit">Edit</a> |
-          <a href="/tourists/<%= element.id %>/delete" onclick="return confirm('Are you sure to delete?')">Delete</a>
+          <a href="/tourists/<%= element.id %>/edit" class="btnMenu">Edit</a>
+          <a href="/tourists/<%= element.id %>/delete" onclick="return confirm('Are you sure to delete?')" class="btnMenu">Delete</a>
         </td>
       </tr>
     <% }); %>

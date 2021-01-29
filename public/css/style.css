@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font: normal 14px 'Roboto', sans-serif;
+  color: #557174;
+  background-color: #c7cfb7;
+}
+
+button {
+  margin-top: 10px;
+  line-height: 24pt;
+  padding: 0 20px;
+  border: none;
+  background: #4e7274;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+}
+
+button:hover {
+  background: inherit;
+  color: #4e7274;
+  border-bottom: 2px solid #4e7274;
+}
+
+form {
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 13px;
+}
+
+h2{
+  margin-bottom: 5px;
+}
+
+input, select {
+  margin-bottom: 5px;
+}
+
+.btnMenu, a.btnMenu:visited, a.btnMenu:link {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 2px;
+  height: 15px;
+  background: #f7f7e8;
+  text-align: center;
+  color: #557174;
+}
+
+a.btnMenu:hover {
+  background: #557174;
+  color: #f7f7e8;
+}
+
+a.btnMenu:active {
+  background: #f7f7e8;
+  color: #557174;
+  font-weight:normal;
+}
+
+.container {
+  text-align: center;
+}
+
+.errMessage {
+  color: red;
+}
+
+.login-bar {
+  float: right;
+}
+
+.navbar {
+  padding: 15px 20px;
+  background-color: #f7f7e8;
+}
+
+.navbar h2, .navbar a:link, .navbar a:visited {
+  margin: 0;
+}
+
+.navbar a:hover {
+  color: #9dad7f;
+}
+
+.navbar a:active {
+  color: #557174;
+}
+
+.container {
+  margin: 30px 20px;
+}
+
+.zui-table {
+  margin-top: 10px;
+  border: solid 1px #557174;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.zui-table thead th {
+  background-color: #557174;
+  color: #f7f7e8;
+  border: solid 1px #557174;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #9dad7f;
+}
+.zui-table tbody td {
+  border: solid 1px #557174;
+  text-align: left;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #f7f7e8;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #557174;
+}
+

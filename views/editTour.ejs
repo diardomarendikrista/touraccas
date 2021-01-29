@@ -17,7 +17,7 @@
   <label for="longitude">Longitude</label><br>
   <input type="number" id="lng" step="any" name="longitude" value="<%= data.longitude %>"><br><br>
   <button type="submit">Edit Tour</button>
-  <button type="button" onclick="javascript:window.history.back();">cancel</button>
+  <button type="button" onclick="javascript:window.location=`/tours`">cancel</button>
 </form>
 
 <%- include('./partials/footer') %>
