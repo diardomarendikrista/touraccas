@@ -2,7 +2,7 @@ const session = require('express-session');
 const express = require("express");
 const router = require("./routes/index");
 const app = express();
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3000;
 // const port = 3000;
 
 const formatPeople = require('./helpers/formatPeople');

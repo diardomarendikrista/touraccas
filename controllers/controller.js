@@ -53,7 +53,9 @@ class Controller {
           res.redirect(`/login?errValidate=${errMessage}`)
         }
       })
-      .catch(err => res.send(err))
+      .catch(err => {
+          res.redirect(`/login?errValidate=${errMessage}`);
+      });
   }
   static logout(req, res) {
     req.session.destroy(err => {
